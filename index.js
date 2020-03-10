@@ -1,3 +1,12 @@
+const { hash } = window.location;
+const message = atob(hash.replace("#", ""));
+
+if (message) {
+  document.querySelector("#message-form").classList.add("hide");
+  document.querySelector("#message-show").classList.remove("hide");
+
+  document.querySelector("h1").innerHTML = message;
+}
 const form = document.querySelector("form");
 
 form.addEventListener("submit", event => {
